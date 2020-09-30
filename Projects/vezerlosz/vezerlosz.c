@@ -14,8 +14,7 @@ int filter() {
 }
 
 int main(int argc, char const *argv[]) {
-  int szam, again /*, i = 1, alsoH = 0, felsoH = 100*/;
-
+  int szam, again;
   do {
     printf("Hanyszor? ");
     szam = filter();
@@ -26,25 +25,31 @@ int main(int argc, char const *argv[]) {
     printf("Ujra? [I]gen / [N]em: ");
     while ((again = getchar()) == '\n') {
     };
-    /*again = getchar();
-    if (again == '\n') {
-      again = getchar();
-    }*/
   } while (again == 'I' || again == 'i');
-
-  /*if (szam <= alsoH || szam > felsoH) {
-    printf("Valid intervallum: ]%d; %d]!\n", alsoH, felsoH);
-  } else {
-    printf("Rendben!\n");
-  }*/
-
-  /*if (szam == felsoH) {
-    printf("Egyenlo!");
-  }*/
-
-  /*while (i <= szam) {
-    printf("%d. Sziasztok!\n", i);
-    i++;
-  }*/
   return 0;
 }
+
+/*int main(int argc, char const *argv[]) {
+  int i = 1, alsoH = 0, felsoH = 100;*/
+
+/*again = getchar();
+if (again == '\n') {
+  again = getchar();
+}*/
+
+/*if (szam <= alsoH || szam > felsoH) {
+  printf("Valid intervallum: ]%d; %d]!\n", alsoH, felsoH);
+} else {
+  printf("Rendben!\n");
+}*/
+
+/*if (szam == felsoH) {
+  printf("Egyenlo!");
+}*/
+
+/*while (i <= szam) {
+  printf("%d. Sziasztok!\n", i);
+  i++;
+}
+return 0;
+}*/
