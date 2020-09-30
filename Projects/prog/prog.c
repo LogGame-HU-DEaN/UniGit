@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 float szazalekErtek(float a, float l) {
   float szertek;
