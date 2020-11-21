@@ -7,10 +7,21 @@ typedef struct donor {
   char btype[3];
   char email;
   int times;
-  ldate();
+  char ldate[11];
 } donor;
 
+char ldate(char *ldate[]) {
+  for (int i = 0; *ldate[i] != '\0'; ++i) {
+    while (i == 5 || i == 8 || i == 11) {
+      if (*ldate[i] != '.') {
+      }
+    }
+  }
+  return **ldate;
+}
+
 int main(int argc, char const *argv[]) {
-  /* code */
+  int n = 6;
+  donor donors[n];
   return 0;
 }
