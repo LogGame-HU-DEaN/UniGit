@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 void fillArray(int *numArray, int size) {
-  size = 5;
+  printf("DB: ");
+  scanf("%d", &size);
 
   for (int i = 0; i < size; i++) {
     printf("%d. value: ", i + 1);
