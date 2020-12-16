@@ -33,15 +33,15 @@ char emailcheck(char *email[]) {
 
 void read(donor *d, int length) {
   for (int i = 0; i < length; i++) {
-    printf("Nev: ");
+    printf("Nev1: ");
     scanf("%s", d[i].name);
-    printf("Vercsoport: ");
+    printf("Vercsoport1: ");
     scanf("%s", d[i].btype);
-    printf("Email: ");
+    printf("Email1: ");
     scanf("%s", &d[i].email);
-    printf("Donaciok: ");
+    printf("Donaciok1: ");
     scanf("%d", &d[i].times);
-    printf("Utolso: ");
+    printf("Utolso1: ");
     scanf("%s", d[i].ldate);
   }
 }
@@ -49,7 +49,7 @@ void read(donor *d, int length) {
 void write(donor *d, int length) {
   for (int i = 0; i < length; i++) {
     printf("Nev: %s\t", d[i].name);
-    printf("Vercsoport: %s\t", d[i].btype);
+    printf("Vercsoport: %s\n", d[i].btype);
     printf("Email: %s\n", &d[i].email);
     printf("Donaciok: %d\n", d[i].times);
     printf("Utolso: %s\n", d[i].ldate);
@@ -57,9 +57,27 @@ void write(donor *d, int length) {
 }
 
 int main(int argc, char const *argv[]) {
-  int n = 6;
+  int n = 6, meret = 0, *tomb;
+  char k;
   donor donors[n];
-  read(donors, n);
-  write(donors, n);
+
+  FILE *fp = NULL;
+  fp = fopen("donorok", "r");
+  while ((k = fgetc(fp)) != EOF) {
+    if (k == '\n') {
+      meret++;
+    }
+  }
+  tomb = (int *)malloc(meret * sizeof(int));
+  rewind(fp);
+  for (int i = 0; i < meret; i++) {
+    fscanf(fp, "%i %s %s %s %d %s", &tomb[i], &tomb[i], &tomb[i], &tomb[i],
+           &tomb[i], &tomb[i]);
+    printf("%d. elem: %d\n", i + 1, tomb[i]);
+  }
+
+  fclose(fp);
+  // read(donors, n);
+  //  write(donors, n);
   return 0;
 }
